@@ -1,0 +1,19 @@
+<p>alta-cliente works!</p>
+<form [formGroup]="contactForm" (ngSubmit)="handleContactFormSubmit()">
+    <label>Nombre
+        <input type="text" formControlName="name" />
+    </label><br>
+    <label>CIF
+        <input type="text" formControlName="cif" />
+    </label><br>
+    <label>Dirección
+        <input type="text" formControlName="dire" />
+    </label><br>
+    <label>País
+        <select formControlName="pais">
+            <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+        </select>
+    </label><br>
+    <button [disabled]="!contactForm.valid" type="submit">Submit</button>
+</form>
+<p>Nombre: {{ contactForm.value.name }} | CIF: {{ contactForm.value.cif }} | Dirección: {{ contactForm.value.dire }} | País: {{ contactForm.value.pais }}</p>

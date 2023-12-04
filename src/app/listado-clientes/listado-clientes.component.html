@@ -1,0 +1,8 @@
+<div class="col-md-4 mb-4">
+    @for (cliente of clientes; track $index) {
+    <p>Nombre: {{ cliente.name }}</p>
+    <p>CIF: {{ cliente.cif }}</p>
+    <p>Dirección: {{ cliente.dire }}</p>
+    <p>País: {{ cliente.pais }}</p>
+}
+</div>
